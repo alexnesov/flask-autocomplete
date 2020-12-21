@@ -18,37 +18,29 @@
 
 
     <form class="form-inline" method="post" action="/submit">
-
-
-
         <div class="form-group mx-sm-3 mb-2">
-
-            {{ form.autocomp(class="form-control")}}
+            {{ form.stock(class="form-control")}}
         </div>
-
-        <button type="submit" class="btn btn-primary mb-2">Confirm City</button>
+        <button type="submit" class="btn btn-primary mb-2">Confirm Stock</button>
     </form>
+
+
 
     <form class="form-inline" method="post" action="/submitcountry">
-
-
         <div class="form-group mx-sm-3 mb-2">
-
             {{ form.country(class="form-control")}}
         </div>
-
-
-
         <button type="submit" class="btn btn-primary mb-2">Confirm Country</button>
-
     </form>
+
+
 
     <script>
         $(function () {
             $.ajax({
                 url: '{{ url_for("autocomplete") }}'
             }).done(function (data) {
-                $('#city_autocomplete').autocomplete({
+                $('#stock_autocomplete').autocomplete({
                     source: data,
                     minLength: 2
                 });
@@ -56,5 +48,3 @@
         });
     </script>
 </body>
-
-</html>
